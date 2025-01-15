@@ -1,0 +1,827 @@
+/* Fondo del overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url('/images/night-sky.jpg') no-repeat center center/cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    opacity: 1;
+    visibility: visible;
+    overflow: hidden;
+}
+
+/* Contenedor del texto con fondo semitransparente */
+.overlay-content {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6); /* Fondo negro semitransparente */
+    padding: 20px 40px;
+    border-radius: 10px;
+    animation: fadeIn 1s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Texto plateado */
+.silver-text {
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #c0c0c0, #d9d9d9, #e6e6e6);
+    
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(192, 192, 192, 0.8), 0 0 20px rgba(192, 192, 192, 0.6);
+    margin-bottom: 20px;
+}
+
+/* Botón de bienvenida */
+.btn-main {
+    background-color: #c0c0c0;
+    color: black;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 15px rgba(192, 192, 192, 0.5);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    .btn-main:hover {
+        background-color: #d9d9d9;
+        transform: scale(1.1);
+    }
+
+
+/* Ocultar overlay */
+.overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+
+
+/* Estilos para la sección de contenido */
+#contenido {
+    font-family: 'Lora', serif;
+}
+
+/* Título especial */
+.special-title {
+    font-size: 4rem;
+    text-align: center;
+    font-family: 'Lora', serif;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7), 0 0 15px rgba(255, 215, 0, 0.8);
+    animation: shine 3s infinite alternate;
+}
+
+@keyframes shine {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.7);
+    }
+
+    100% {
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.9), 0 0 30px rgba(255, 215, 0, 1);
+    }
+}
+
+/* Estilos para el párrafo de invitación */
+.invitation-text {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #e6e6e6; /* Gris claro */
+    margin: 20px auto;
+    text-align: center;
+    font-style: italic;
+    animation: fadeIn 2s ease-out;
+}
+
+
+/* Animación de aparición suave para el párrafo */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Resetting some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #1e1e4f; /* Azul noche */
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    
+}
+
+/* Resetting some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #1e1e4f; /* Azul noche */
+    color: #fff;
+    text-align: center;
+}
+
+/* Hero section */
+.hero {
+    padding: 100px 20px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+    .hero h1 {
+        font-size: 3em;
+        font-family: 'Lora', serif;
+        color: #c0c0c0; /* Plateado */
+        background: linear-gradient(90deg, #c0c0c0, #e6e6e6, #c0c0c0);
+        background-size: 200%;
+        
+        -webkit-text-fill-color: transparent;
+        animation: shimmer 3s infinite;
+        text-shadow: 0 0 10px rgba(192, 192, 192, 0.8), 0 0 20px rgba(192, 192, 192, 0.6);
+    }
+.hero, .contenido {
+    transition: opacity 0.5s ease;
+}
+
+#contenido {
+    max-width: 900px; /* Limita el ancho máximo */
+    margin: 20px auto; /* Centra el contenido con márgenes */
+    padding: 20px; /* Agrega padding interno */
+    font-family: 'Lora', serif;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+
+    .hero .lead {
+        font-size: 1.2em;
+    }
+
+.hero .btn-main {
+    background-color: #c0c0c0; /* Plateado */
+    color: #1e1e4f; /* Azul noche */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.4s;
+}
+
+        .hero .btn-main:hover {
+            background-color: #d9d9d9; /* Un plateado más claro */
+        }
+
+
+.section {
+    padding: 40px 20px;
+    margin-top: 100px;
+    background-color: rgba(0, 0, 0, 0.7); /* Color original */
+    border-radius: 10px;
+    color: #fff;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+    /* Sección visible (cuando hace scroll) */
+    .section.visible {
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+    /* Animación de aparición suave */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Efecto de partículas (con HTML5 canvas) */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Para que no interfiera con otros elementos */
+    z-index: 0; /* Asegurarnos que las partículas queden detrás del contenido */
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #c0c0c0; /* Color plateado */
+    border-radius: 50%;
+    animation: moveParticles 5s linear infinite;
+}
+
+@keyframes moveParticles {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(100vw, 100vh);
+    }
+}
+
+/* Estilos para las secciones que serán visibles */
+.section.visible {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+.hero, .contenido {
+    transition: opacity 0.5s ease;
+}
+
+/* Animación de entrada para las secciones */
+@keyframes fadeInSection {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplicamos la animación de entrada a las secciones */
+.section {
+    animation: fadeInSection 1s ease-out forwards;
+}
+
+/* Estilo para el resto de secciones */
+#contenido {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: 'Lora', serif;
+}
+
+/* Lista en agenda */
+#agenda ul {
+    list-style-type: none;
+    font-size: 1.1em;
+}
+
+#agenda li {
+    margin: 10px 0;
+}
+
+.gallery {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Efecto de desplazamiento suave */
+html {
+    scroll-behavior: smooth;
+}
+
+.section.visible {
+    opacity: 1; /* Solo manejamos opacidad */
+    transition: opacity 1s ease-out;
+}
+
+.butterfly {
+    position: absolute;
+    width: 50px; /* Ajusta según el tamaño que prefieras */
+    animation: fly 20s linear infinite; /* Aumenta el tiempo de animación a 20s */
+}
+
+@keyframes fly {
+    0% {
+        transform: translate(-10vw, 100vh) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(50vw, 50vh) rotate(20deg);
+    }
+
+    100% {
+        transform: translate(110vw, -10vh) rotate(-10deg);
+    }
+}
+
+/* Opcional: Diferentes animaciones para cada mariposa */
+/* Variación en tamaños, velocidades y posiciones iniciales */
+.butterfly:nth-child(1) {
+    width: 40px;
+    animation: fly1 20s linear infinite, flutter 0.5s ease-in-out infinite; /* Cambié el tiempo a 20s */
+    top: 20%; /* Posición inicial */
+    left: 5%;
+}
+
+.butterfly:nth-child(2) {
+    width: 60px;
+    animation: fly2 22s linear infinite, flutter 0.6s ease-in-out infinite; /* Cambié el tiempo a 22s */
+    top: 10%;
+    left: 80%;
+}
+
+.butterfly:nth-child(3) {
+    width: 45px;
+    animation: fly3 18s linear infinite, flutter 0.4s ease-in-out infinite; /* Cambié el tiempo a 18s */
+    top: 50%;
+    left: 20%;
+}
+
+.butterfly:nth-child(4) {
+    width: 55px;
+    animation: fly4 24s linear infinite, flutter 0.5s ease-in-out infinite; /* Cambié el tiempo a 24s */
+    top: 70%;
+    left: 60%;
+}
+
+.butterfly:nth-child(5) {
+    width: 50px;
+    animation: fly5 20s linear infinite, flutter 0.5s ease-in-out infinite; /* Cambié el tiempo a 20s */
+    top: 30%;
+    left: 40%;
+}
+
+@keyframes fly1 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(50vw, -20vh);
+    }
+
+    50% {
+        transform: translate(20vw, 30vh);
+    }
+
+    75% {
+        transform: translate(70vw, -40vh);
+    }
+
+    100% {
+        transform: translate(100vw, 0);
+    }
+}
+
+@keyframes fly2 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(-40vw, 20vh);
+    }
+
+    50% {
+        transform: translate(-10vw, -30vh);
+    }
+
+    75% {
+        transform: translate(-60vw, 40vh);
+    }
+
+    100% {
+        transform: translate(-100vw, 0);
+    }
+}
+
+@keyframes fly3 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(30vw, 20vh);
+    }
+
+    50% {
+        transform: translate(-20vw, -20vh);
+    }
+
+    75% {
+        transform: translate(50vw, 40vh);
+    }
+
+    100% {
+        transform: translate(100vw, 0);
+    }
+}
+
+@keyframes fly4 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(-30vw, -20vh);
+    }
+
+    50% {
+        transform: translate(40vw, 30vh);
+    }
+
+    75% {
+        transform: translate(-50vw, -40vh);
+    }
+
+    100% {
+        transform: translate(-100vw, 0);
+    }
+}
+
+@keyframes fly5 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(20vw, -30vh);
+    }
+
+    50% {
+        transform: translate(-30vw, 20vh);
+    }
+
+    75% {
+        transform: translate(60vw, -50vh);
+    }
+
+    100% {
+        transform: translate(100vw, 0);
+    }
+}
+
+#formularioAsistencia {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Mantiene la relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+    #iframe-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+
+
+/* Contenedor de la galería */
+.gallery {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Carrusel */
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+/* Cada slide */
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+    .slide img {
+        width: 100%;
+        display: block;
+    }
+
+/* Frase en cada imagen */
+.frase {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    color: white;
+    font-size: 1.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Botones de navegación */
+
+
+.prev {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2rem;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    left: 10px;
+}
+
+.next {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2rem;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    right: 10px;
+}
+
+
+/* Contenedor de partículas */
+.particle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* Asegura que no interfiera con la interacción del usuario */
+    z-index: -1; /* Las partículas estarán detrás del contenido */
+}
+
+/* Estilos de cada partícula */
+.particle {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.7); /* Color de la partícula (puedes cambiarlo) */
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    animation: fade 5s infinite; /* Animación de desvanecimiento */
+}
+
+/* Animación para que las partículas aparezcan y desaparezcan */
+@keyframes fade {
+    0% {
+        opacity: 0; /* Comienza invisible */
+    }
+
+    50% {
+        opacity: 1; /* Se vuelve completamente visible */
+    }
+
+    100% {
+        opacity: 0; /* Vuelve a desaparecer */
+    }
+}
+
+
+
+/* Estilo para los destellos de magia */
+.magia {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    opacity: 0;
+    animation: destello 1s infinite alternate;
+}
+
+/* Animación de los destellos de magia */
+@keyframes destello {
+    0% {
+        opacity: 0.8;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+}
+
+/* Agregar partículas de magia en posiciones aleatorias */
+.particle-container .magia {
+    top: calc(100vh * var(--i));
+    left: calc(100vw * var(--j));
+    animation-duration: calc(1s + (var(--i) * 0.5));
+    animation-delay: calc(0.5s + (var(--i) * 0.2));
+}
+
+
+
+
+
+
+.seccion-regalos {
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 40px 0;
+}
+
+.titulo-regalos {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.descripcion-regalos {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.informacion-regalos p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.informacion-regalos strong {
+    color: #ffcc00; /* Resalta la información importante */
+}
+
+
+.gift-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    position: relative;
+}
+
+.gift-box {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background-color: #ff69b4; /* Color de la caja */
+    border-radius: 5px;
+    animation: bounce 1.5s infinite;
+}
+
+    .gift-box .lid {
+        position: absolute;
+        top: -20px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background-color: #ff69b4;
+        border-radius: 5px 5px 0 0;
+        animation: open-lid 2s infinite;
+    }
+
+    .gift-box .ribbon {
+        position: absolute;
+        background-color: #ffffff; /* Color del lazo */
+    }
+
+.ribbon-vertical {
+    width: 10px;
+    height: 100%;
+    left: 35px;
+}
+
+.ribbon-horizontal {
+    width: 100%;
+    height: 10px;
+    top: 35px;
+}
+
+.sparkles {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.sparkle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #ffd700; /* Color de los destellos */
+    border-radius: 50%;
+    opacity: 0;
+    animation: sparkle-animation 1.5s infinite;
+}
+
+    .sparkle:nth-child(1) {
+        top: 10%;
+        left: 20%;
+        animation-delay: 0.2s;
+    }
+
+    .sparkle:nth-child(2) {
+        top: 30%;
+        left: 60%;
+        animation-delay: 0.5s;
+    }
+
+    .sparkle:nth-child(3) {
+        top: 50%;
+        left: 40%;
+        animation-delay: 0.8s;
+    }
+
+/* Animaciones */
+@keyframes open-lid {
+    0%, 100% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(-15deg);
+    }
+}
+
+@keyframes sparkle-animation {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
