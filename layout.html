@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación - 15 Años de Abi</title>
+    <link rel="stylesheet" href="/css/site.css">
+    <script src="js/site.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+    <!-- Overlay de bienvenida -->
+    <div id="bienvenida" class="overlay">
+        <div class="overlay-content">
+            <h1 class="silver-text">¡Grandes Noticias!</h1>
+            <p>Has sido invitado a una noche mágica que quedará en tu memoria:</p>
+            <h2 class="highlight">Los 15 años de Abi</h2>
+            <button id="btnContinuar" class="btn-main">Ver Invitación</button>
+        </div>
+    </div>
+
+    <div class="particle-container"></div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <h1>¡Te invito a mis 15 años!</h1>
+        <button id="btnVerInvitacion" class="btn-main">Ver invitación</button>
+    </section>
+
+    <!-- Contenido principal -->
+    <section id="contenido" class="contenido" style="display: none;">
+        <header class="bg-primary text-white text-center py-4" style="background: linear-gradient(to right, #001f3f, #3949ab); color: #fff; padding: 2rem; border-radius: 15px;">
+            <h1 class="special-title" style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: bold;">¡Estás invitado a mi noche especial!</h1>
+            <p class="lead" style="font-family: 'Roboto', sans-serif; font-size: 1.2rem; margin-top: 0.5rem;">22 de febrero de 2025 | <span style="font-style: italic;">Quinta La Escondida</span></p>
+        </header>
+
+        <main class="container mt-4" style="background: rgba(25, 25, 112, 0.6); padding: 2rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);">
+            <p class="invitation-text" style="font-family: 'Lora', serif; font-size: 1.2rem; line-height: 1.8; text-align: justify; color: #f5f5f5;">
+                Hola, soy Abi y quiero invitarte a celebrar mis 15 años. El 22 de febrero será una noche que nunca olvidaré, ¡y me encantaría que estés ahí para compartirla conmigo!
+                Habrá música, sorpresas y mucha diversión. Será una fiesta llena de momentos especiales, y tu presencia hará que sea aún más inolvidable.
+            </p>
+
+            <div style="position: relative; text-align: center; margin-top: 2rem; overflow: hidden; border-radius: 15px;">
+                <img src="/images/abi1.jpg" alt="Abi" style="width: 100%; max-width: 900px; height: auto; filter: brightness(0.9) contrast(1.1);">
+                <div style="position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%); background: rgba(255, 255, 255, 0.8); padding: 0.3rem 0.8rem; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); max-width: 90%; font-size: 0.9rem;">
+                    <span style="font-family: 'Lora', serif; font-size: 1rem; color: #333; word-wrap: break-word;">"Un momento inolvidable con vos lo hace aún más especial"</span>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5" style="background-color: rgba(0, 0, 0, 0.7)">
+        <p>&copy; 2025 15 Años de Abi. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="/js/site.js"></script>
+    <script>
+        document.querySelector('.btn-main').addEventListener('click', function () {
+            confetti();
+        });
+
+        function copiarAlPortapapeles(id) {
+            const texto = document.getElementById(id).textContent;
+            navigator.clipboard.writeText(texto)
+                .then(() => alert('¡Texto copiado al portapapeles!'))
+                .catch(err => console.error('Error al copiar: ', err));
+        }
+
+        function abrirMapa() {
+            const direccion = "Quinta la Escondida Cabo 2° Ricardo Ramírez, B1635 Pilar, Provincia de Buenos Aires";
+            const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(direccion)}`;
+            window.open(url, "_blank");
+        }
+    </script>
+</body>
+
+</html>
