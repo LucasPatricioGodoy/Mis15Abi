@@ -1,99 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Invitación - 15 Años de Abi</title>
+    <link rel="stylesheet" href="/css/site.css">
     <script src="js/site.js"></script>
-    <title>Abi - Mis 15 años</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
-    <!-- Detalles del Evento -->
-    <div id="detalles" class="section">
-        <h2>Detalles del Evento</h2>
-        <p>📅 Fecha: <strong>17 de marzo de 2025</strong></p>
-        <p>📍 Ubicación: <strong>Salón Luz de Luna, Ciudad XYZ</strong></p>
-    </div>
-    
-    <!-- Agenda del Evento -->
-    <div id="agenda" class="section">
-        <h2>Agenda del Evento</h2>
-        <ul>
-            <li>7:00 PM - Recepción</li>
-            <li>8:00 PM - Cena</li>
-            <li>10:00 PM - Baile</li>
-        </ul>
-    </div>
-    
-    <!-- RSVP -->
-    <div id="rsvp" class="section">
-        <h2>RSVP</h2>
-        <p>Confirma tu asistencia antes del 1 de marzo de 2025.</p>
-        <div class="iframe-container">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScORAq3Kb5XxR8TfKF0Oxp2ugEaR1Dx_DFrTSS49cxx9Z4oJg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+    <!-- Overlay de bienvenida -->
+    <div id="bienvenida" class="overlay">
+        <div class="overlay-content">
+            <h1 class="silver-text">¡Grandes Noticias!</h1>
+            <p>Has sido invitado a una noche mágica que quedará en tu memoria:</p>
+            <h2 class="highlight">Los 15 años de Abi</h2>
+            <button id="btnContinuar" class="btn-main">Ver Invitación</button>
         </div>
     </div>
-    
-    <!-- Galería de Imágenes -->
-    <div id="galeria" class="section">
-        <div class="gallery">
-            <div class="carousel">
-                <div class="slide">
-                    <img src="images/foto1.jpg" alt="Imagen 1">
-                    <div class="frase">Cada paso que das nos llena de alegría y amor ❤️</div>
-                </div>
-                <div class="slide">
-                    <img src="images/foto2.jpg" alt="Imagen 2">
-                    <div class="frase">El tiempo vuela, pero tu esencia sigue intacta... ¡Qué emoción verte crecer! 💫</div>
-                </div>
-                <div class="slide">
-                    <img src="images/foto3.jpg" alt="Imagen 3">
-                    <div class="frase">Los mejores momentos siempre están rodeados de quienes más amamos ❤️</div>
-                </div>
-                <div class="slide">
-                    <img src="images/foto4.jpg" alt="Imagen 4">
-                    <div class="frase">Así como en esta foto, sigues haciendo que el mundo sea un lugar más brillante 🌟</div>
+
+    <div class="particle-container"></div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <h1>¡Te invito a mis 15 años!</h1>
+        <button id="btnVerInvitacion" class="btn-main">Ver invitación</button>
+    </section>
+
+    <!-- Contenido principal -->
+    <section id="contenido" class="contenido" style="display: none;">
+        <header class="bg-primary text-white text-center py-4" style="background: linear-gradient(to right, #001f3f, #3949ab); color: #fff; padding: 2rem; border-radius: 15px;">
+            <h1 class="special-title" style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: bold;">¡Estás invitado a mi noche especial!</h1>
+            <p class="lead" style="font-family: 'Roboto', sans-serif; font-size: 1.2rem; margin-top: 0.5rem;">22 de febrero de 2025 | <span style="font-style: italic;">Quinta La Escondida</span></p>
+        </header>
+
+        <main class="container mt-4" style="background: rgba(25, 25, 112, 0.6); padding: 2rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);">
+            <p class="invitation-text" style="font-family: 'Lora', serif; font-size: 1.2rem; line-height: 1.8; text-align: justify; color: #f5f5f5;">
+                Hola, soy Abi y quiero invitarte a celebrar mis 15 años. El 22 de febrero será una noche que nunca olvidaré, ¡y me encantaría que estés ahí para compartirla conmigo!
+                Habrá música, sorpresas y mucha diversión. Será una fiesta llena de momentos especiales, y tu presencia hará que sea aún más inolvidable.
+            </p>
+
+            <div style="position: relative; text-align: center; margin-top: 2rem; overflow: hidden; border-radius: 15px;">
+                <img src="/images/abi1.jpg" alt="Abi" style="width: 100%; max-width: 900px; height: auto; filter: brightness(0.9) contrast(1.1);">
+                <div style="position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%); background: rgba(255, 255, 255, 0.8); padding: 0.3rem 0.8rem; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); max-width: 90%; font-size: 0.9rem;">
+                    <span style="font-family: 'Lora', serif; font-size: 1rem; color: #333; word-wrap: break-word;">"Un momento inolvidable con vos lo hace aún más especial"</span>
                 </div>
             </div>
-            <button class="prev">Anterior</button>
-            <button class="next">Siguiente</button>
+        </main>
+
+        <!-- Detalles del Evento -->
+        <div id="detalles" class="section">
+            <h2>Detalles del Evento</h2>
+            <p>📅 Fecha: <strong>17 de marzo de 2025</strong></p>
+            <p>📍 Ubicación: <strong>Salón Luz de Luna, Ciudad XYZ</strong></p>
         </div>
-    </div>
-    
-    <!-- Información de Regalos -->
-    <div id="regalos" class="seccion-regalos">
-        <div class="contenido-regalos">
-            <h2 class="titulo-regalos">"Si desean sorprenderme con algo más que su preciada presencia..."</h2>
-            <div class="gift-container">
-                <div class="gift-box">
-                    <div class="lid"></div>
-                    <div class="box"></div>
-                    <div class="ribbon ribbon-vertical"></div>
-                    <div class="ribbon ribbon-horizontal"></div>
-                    <div class="sparkles">
-                        <div class="sparkle"></div>
-                        <div class="sparkle"></div>
-                        <div class="sparkle"></div>
+        
+        <!-- Agenda del Evento -->
+        <div id="agenda" class="section">
+            <h2>Agenda del Evento</h2>
+            <ul>
+                <li>7:00 PM - Recepción</li>
+                <li>8:00 PM - Cena</li>
+                <li>10:00 PM - Baile</li>
+            </ul>
+        </div>
+        
+        <!-- RSVP -->
+        <div id="rsvp" class="section">
+            <h2>RSVP</h2>
+            <p>Confirma tu asistencia antes del 1 de marzo de 2025.</p>
+            <div class="iframe-container">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScORAq3Kb5XxR8TfKF0Oxp2ugEaR1Dx_DFrTSS49cxx9Z4oJg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+            </div>
+        </div>
+        
+        <!-- Galería de Imágenes -->
+        <div id="galeria" class="section">
+            <div class="gallery">
+                <div class="carousel">
+                    <div class="slide">
+                        <img src="images/foto1.jpg" alt="Imagen 1">
+                        <div class="frase">Cada paso que das nos llena de alegría y amor ❤️</div>
+                    </div>
+                    <div class="slide">
+                        <img src="images/foto2.jpg" alt="Imagen 2">
+                        <div class="frase">El tiempo vuela, pero tu esencia sigue intacta... ¡Qué emoción verte crecer! 💫</div>
+                    </div>
+                    <div class="slide">
+                        <img src="images/foto3.jpg" alt="Imagen 3">
+                        <div class="frase">Los mejores momentos siempre están rodeados de quienes más amamos ❤️</div>
+                    </div>
+                    <div class="slide">
+                        <img src="images/foto4.jpg" alt="Imagen 4">
+                        <div class="frase">Así como en esta foto, sigues haciendo que el mundo sea un lugar más brillante 🌟</div>
                     </div>
                 </div>
-            </div>
-            <p class="descripcion-regalos">
-                Aquí les dejo los detalles, en caso de que quieran hacerme un pequeño regalo:
-            </p>
-            <div class="informacion-regalos">
-                <p><strong>Alias:</strong> [Alias]</p>
-                <p><strong>CBU:</strong> [CBU]</p>
+                <button class="prev">Anterior</button>
+                <button class="next">Siguiente</button>
             </div>
         </div>
-    </div>
-    
-    <!-- Decoración de Mariposas -->
-    <div class="butterflies">
-        <img src="images/butterfly1.png" alt="Mariposa" class="butterfly">
-        <img src="images/butterfly2.png" alt="Mariposa" class="butterfly">
-        <img src="images/fairy2.png" alt="Mariposa" class="butterfly">
-        <img src="images/facopia.png" alt="Mariposa" class="butterfly">
-        <img src="images/butterfly3.png" alt="Mariposa" class="butterfly">
-    </div>
+
+        <!-- Información de Regalos -->
+        <div id="regalos" class="seccion-regalos">
+            <div class="contenido-regalos">
+                <h2 class="titulo-regalos">"Si desean sorprenderme con algo más que su preciada presencia..."</h2>
+                <div class="gift-container">
+                    <div class="gift-box">
+                        <div class="lid"></div>
+                        <div class="box"></div>
+                        <div class="ribbon ribbon-vertical"></div>
+                        <div class="ribbon ribbon-horizontal"></div>
+                        <div class="sparkles">
+                            <div class="sparkle"></div>
+                            <div class="sparkle"></div>
+                            <div class="sparkle"></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="descripcion-regalos">
+                    Aquí les dejo los detalles, en caso de que quieran hacerme un pequeño regalo:
+                </p>
+                <div class="informacion-regalos">
+                    <p><strong>Alias:</strong> [Alias]</p>
+                    <p><strong>CBU:</strong> [CBU]</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decoración de Mariposas -->
+        <div class="butterflies">
+            <img src="images/butterfly1.png" alt="Mariposa" class="butterfly">
+            <img src="images/butterfly2.png" alt="Mariposa" class="butterfly">
+            <img src="images/fairy2.png" alt="Mariposa" class="butterfly">
+            <img src="images/facopia.png" alt="Mariposa" class="butterfly">
+            <img src="images/butterfly3.png" alt="Mariposa" class="butterfly">
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5" style="background-color: rgba(0, 0, 0, 0.8);">
+        <p>&copy; 2025, Todos los derechos reservados</p>
+    </footer>
 </body>
 </html>
